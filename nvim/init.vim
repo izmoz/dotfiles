@@ -18,12 +18,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'brooth/far.vim'
 Plug 'https://github.com/morhetz/gruvbox'
-Plug 'zacanger/angr.vim'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'fcpg/vim-orbital'
 call plug#end()
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
+" set termguicolors
+let g:gruvbox_contrast_dark='hard'
+colorscheme orbital
 
 nnoremap <leader>ff <cmd>:Files<cr>
 nnoremap <leader>fg <cmd>:Files ~<cr>
@@ -54,3 +53,10 @@ autosave.setup(
     }
 )
 EOF
+hi String ctermfg=103 ctermbg=none
+hi Statement ctermfg=32 ctermbg=none
+hi Include ctermfg=137
+hi PreProc ctermfg=137
+hi Normal ctermfg=254
+hi Structure ctermfg=223
+hi Type ctermfg=180
