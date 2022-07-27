@@ -19,11 +19,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'brooth/far.vim'
 Plug 'https://github.com/morhetz/gruvbox'
 Plug 'fcpg/vim-orbital'
+Plug 'sts10/vim-pink-moon'
+Plug 'whatyouhide/vim-gotham'
+Plug 'https://github.com/cocopon/iceberg.vim'
 call plug#end()
-" set termguicolors
-let g:gruvbox_contrast_dark='hard'
-colorscheme orbital
-
+set termguicolors
+colorscheme iceberg
+set background=dark
 nnoremap <leader>ff <cmd>:Files<cr>
 nnoremap <leader>fg <cmd>:Files ~<cr>
 imap <C-c> <Esc>
@@ -53,10 +55,4 @@ autosave.setup(
     }
 )
 EOF
-hi String ctermfg=103 ctermbg=none
-hi Statement ctermfg=32 ctermbg=none
-hi Include ctermfg=137
-hi PreProc ctermfg=137
-hi Normal ctermfg=254
-hi Structure ctermfg=223
-hi Type ctermfg=180
+" hi MatchParen guifg=lightblue guibg=darkblue
