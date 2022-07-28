@@ -9,6 +9,7 @@ syntax on
 set nohlsearch 
 set laststatus=2
 set clipboard=unnamedplus
+set cursorline
 call plug#begin()
 Plug 'Pocco81/AutoSave.nvim'
 Plug 'preservim/nerdcommenter'
@@ -17,11 +18,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'brooth/far.vim'
-Plug 'https://github.com/morhetz/gruvbox'
-Plug 'fcpg/vim-orbital'
-Plug 'sts10/vim-pink-moon'
-Plug 'whatyouhide/vim-gotham'
-Plug 'https://github.com/cocopon/iceberg.vim'
+Plug 'cocopon/iceberg.vim'
 call plug#end()
 set termguicolors
 colorscheme iceberg
@@ -31,6 +28,8 @@ nnoremap <leader>fg <cmd>:Files ~<cr>
 imap <C-c> <Esc>
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
+let g:fzf_preview_window = []
+let g:fzf_layout = { 'down': '40%' }
 :set pumheight=20
 nnoremap <silent> <C-f> :Farp <cr>
 nnoremap <silent> <leader>fd :Fardo <cr>
@@ -55,4 +54,3 @@ autosave.setup(
     }
 )
 EOF
-" hi MatchParen guifg=lightblue guibg=darkblue
