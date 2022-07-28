@@ -1,0 +1,16 @@
+local keymap = vim.api.nvim_set_keymap
+keymap('n', '<c-s>', ':w<CR>', {})
+keymap('i', '<c-s>', '<Esc>:w<CR>a', {})
+local opts = { noremap = true }
+keymap('n', '<c-j>', '<c-w>j', opts)
+keymap('n', '<c-h>', '<c-w>h', opts)
+keymap('n', '<c-k>', '<c-w>k', opts)
+keymap('n', '<c-l>', '<c-w>l', opts)
+keymap('n','gd', ':lua vim.lsp.buf.definition()<cr>',opts)
+keymap('n','gD', ':lua vim.lsp.buf.declaration()<cr>',opts)
+keymap('n','gi', ':lua vim.lsp.buf.implementation()<cr>',opts)
+keymap('n','gw', ':lua vim.lsp.buf.document_symbol()<cr>',opts)
+keymap('n','K', ':lua vim.lsp.buf.hover()<cr>',opts)
+keymap('n','<c-k>', ':lua vim.lsp.buf.signature_help()<cr>',opts)
+keymap('n','<leader>af', ':lua vim.lsp.buf.code_action()<cr>',opts)
+keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({ layout_config = {height = 0.3},previewer = false })) <cr>", opts)
