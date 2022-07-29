@@ -25,6 +25,9 @@ require('packer').startup(function()
     use 'numToStr/Comment.nvim'
 
     use 'nvim-lualine/lualine.nvim'
+
+    use 'tpope/vim-surround'
+    use 'windwp/nvim-autopairs'
 end)
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
     local configs = require'nvim-treesitter.configs'
@@ -59,7 +62,7 @@ local cmp=require'cmp'
       ['<C-F>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
-      ['<C-f>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<C-f>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
@@ -145,3 +148,4 @@ require('Comment').setup( {
 } )
 -- AIRLINE --
 require('lualine').setup()
+require("nvim-autopairs").setup()
