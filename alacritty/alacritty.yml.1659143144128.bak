@@ -13,9 +13,8 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
-# TERM variable
-#
+env:
+  TERM: xterm-256color
 # This value is used to set the `$TERM` environment variable for
 # each instance of Alacritty. If it is not present, alacritty will
 # check the local terminfo database and use `alacritty` if it is
@@ -61,7 +60,7 @@ decorations: full
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
 #opacity: 0.5
-window.opacity: 0.5
+# window.opacity: 1.0
 # Startup Mode (changes require restart)
 #
 # Values for `startup_mode`:
@@ -71,7 +70,7 @@ window.opacity: 0.5
 #
 # Values for `startup_mode` (macOS only):
 #   - SimpleFullscreen
-startup_mode: Windowed
+#startup_mode: Windowed
 # Window title
 #title: Alacritty
 # Allow terminal applications to change Alacritty's window title.
@@ -103,10 +102,11 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: FiraCode NF
-    size: 13
+    # family: CodeNewRoman NF
+    family: DejaVuSansMono Nerd Font
     # The `style` can be specified to pick a specific face.
-    #style: Bold
+    style: Light
+    size: 11
     # Bold font face
     #bold:
     # Font family
@@ -378,10 +378,11 @@ font:
   #   - (macOS) /bin/bash --login
   #   - (Linux/BSD) user login shell
   #   - (Windows) powershell
-  #shell:
-  #  program: /bin/bash
-  #  args:
-  #    - --login
+  shell:
+    program: /bin/zsh
+    args:
+      - --login
+      - -c tmux
   # Startup directory
   #
   # Directory the shell is started in. If this is unset, or `None`, the working
@@ -804,31 +805,30 @@ font:
   # Print all received window events.
   #print_events: false
 colors:
-  name: Cloud
-  author: ""
+  # Default colors
   primary:
-    background: "#000000"
-    foreground: "#ffffff"
-  cursor:
-    text: "#000000"
-    cursor: "#ffffff"
+    background: '#161821'
+    foreground: '#d2d4de'
+
+  # Normal colors
   normal:
-    black: "#222827"
-    red: "#d5a8e3"
-    green: "#9c75dd"
-    yellow: "#9898ae"
-    blue: "#654a96"
-    magenta: "#625566"
-    cyan: "#a9d1df"
-    white: "#e6ebe5"
+    black: '#161821'
+    red: '#e27878'
+    green: '#b4be82'
+    yellow: '#e2a478'
+    blue: '#84a0c6'
+    magenta: '#a093c7'
+    cyan: '#89b8c2'
+    white: '#c6c8d1'
+
+  # Bright colors
   bright:
-    black: "#5d6f74"
-    red: "#cd749c"
-    green: "#63b0b0"
-    yellow: "#c0c0dd"
-    blue: "#5786bc"
-    magenta: "#3f3442"
-    cyan: "#849da2"
-    white: "#d9d6cf"
-theme: Cloud
--Deep
+    black: '#6b7089'
+    red: '#e98989'
+    green: '#c0ca8e'
+    yellow: '#e9b189'
+    blue: '#91acd1'
+    magenta: '#ada0d3'
+    cyan: '#95c4ce'
+    white: '#d2d4de'
+theme: Iceberg-Dark

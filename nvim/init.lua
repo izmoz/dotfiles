@@ -19,6 +19,8 @@ require('packer').startup(function()
     use 'nvim-telescope/telescope.nvim'
 
     use 'cocopon/iceberg.vim'
+    use 'rakr/vim-one'
+    use 'joshdick/onedark.vim'
 
     use 'nvim-treesitter/nvim-treesitter'
     
@@ -39,7 +41,9 @@ vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
         enable = true, -- default is disabled anyways
     }
 }
-vim.cmd('colorscheme iceberg')
+vim.cmd('colorscheme onedark')
+vim.cmd('set background=dark')
+
 local lsp_flags = { debounce_text_changes = 0,
 }
 require'lspconfig'.clangd.setup{

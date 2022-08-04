@@ -1,4 +1,22 @@
-s used to set the `$TERM` environment variable for
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+# Import additional configuration files
+#
+# Imports are loaded in order, skipping all missing files, with the importing
+# file being loaded last. If a field is already present in a previous import, it
+# will be replaced.
+#
+# All imports must either be absolute paths starting with `/`, or paths relative
+# to the user's home directory starting with `~/`.
+#import:
+#  - /path/to/alacritty.yml
+# Any items in the `env` entry below will be added as
+# environment variables. Some entries may override variables
+# set by alacritty itself.
+#env:
+# TERM variable
+#
+# This value is used to set the `$TERM` environment variable for
 # each instance of Alacritty. If it is not present, alacritty will
 # check the local terminfo database and use `alacritty` if it is
 # available, otherwise `xterm-256color` is used.
@@ -43,7 +61,7 @@ decorations: full
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
 #opacity: 0.5
-window.opacity: 0.5
+# window.opacity: 1.0
 # Startup Mode (changes require restart)
 #
 # Values for `startup_mode`:
@@ -53,7 +71,7 @@ window.opacity: 0.5
 #
 # Values for `startup_mode` (macOS only):
 #   - SimpleFullscreen
-startup_mode: Windowed
+#startup_mode: Windowed
 # Window title
 #title: Alacritty
 # Allow terminal applications to change Alacritty's window title.
@@ -85,10 +103,11 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: FiraCode NF
-    size: 13
+    # family: CodeNewRoman NF
+    family: SourceCodePro
     # The `style` can be specified to pick a specific face.
-    #style: Bold
+    style: Medium
+    size: 9
     # Bold font face
     #bold:
     # Font family
@@ -360,10 +379,11 @@ font:
   #   - (macOS) /bin/bash --login
   #   - (Linux/BSD) user login shell
   #   - (Windows) powershell
-  #shell:
-  #  program: /bin/bash
-  #  args:
-  #    - --login
+  shell:
+    program: /bin/zsh
+    args:
+      - --login
+      - -c tmux
   # Startup directory
   #
   # Directory the shell is started in. If this is unset, or `None`, the working
@@ -785,34 +805,32 @@ font:
   #log_level: Warn
   # Print all received window events.
   #print_events: false
+# Colors (Gruvbox dark)
 colors:
-  # Default colors
+  name: 3024 (dark)
+  author: Chris Kempson
   primary:
-    background: '0x24292e'
-    foreground: '0xd1d5da'
-
-  # Normal colors
+    background: "#090300"
+    foreground: "#a5a2a2"
+  cursor:
+    text: "#090300"
+    cursor: "#a5a2a2"
   normal:
-    black: '0x24292e'
-    red: '0xf14c4c'
-    green: '0x23d18b'
-    yellow: '0xe2e210'
-    blue: '0x3b8eea'
-    magenta: '0xbc3fbc'
-    cyan: '0x29b7da'
-    white: '0xd1d5da'
-
-  # Bright colors
+    black: "#090300"
+    red: "#db2d20"
+    green: "#01a252"
+    yellow: "#fded02"
+    blue: "#01a0e4"
+    magenta: "#a16a94"
+    cyan: "#b5e4f4"
+    white: "#a5a2a2"
   bright:
-    black: '0x666666'
-    red: '0xf14c4c'
-    green: '0x23d18b'
-    yellow: '0xf5f543'
-    blue: '0x3b8eea'
-    magenta: '0xd670d6'
-    cyan: '0x29b7da'
-    white: '0xd1d5da'
-
-  indexed_colors:
-    - { index: 16, color: '0xd18616' }
-    - { index: 17, color: '0xf14c4c' }
+    black: "#5c5855"
+    red: "#db2d20"
+    green: "#01a252"
+    yellow: "#fded02"
+    blue: "#01a0e4"
+    magenta: "#a16a94"
+    cyan: "#b5e4f4"
+    white: "#f7f7f7"
+theme: 3024.dark

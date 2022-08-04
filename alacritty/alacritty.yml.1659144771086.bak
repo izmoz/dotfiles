@@ -13,9 +13,8 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
-# TERM variable
-#
+env:
+  TERM: xterm-256color
 # This value is used to set the `$TERM` environment variable for
 # each instance of Alacritty. If it is not present, alacritty will
 # check the local terminfo database and use `alacritty` if it is
@@ -61,7 +60,7 @@ decorations: full
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
 #opacity: 0.5
-window.opacity: 0.5
+# window.opacity: 1.0
 # Startup Mode (changes require restart)
 #
 # Values for `startup_mode`:
@@ -103,10 +102,11 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Monaco
-    size: 13
+    # family: CodeNewRoman NF
+    family: DejaVuSansMono Nerd Font
     # The `style` can be specified to pick a specific face.
-    style: Bold
+    style: Light
+    size: 11
     # Bold font face
     #bold:
     # Font family
@@ -378,10 +378,11 @@ font:
   #   - (macOS) /bin/bash --login
   #   - (Linux/BSD) user login shell
   #   - (Windows) powershell
-  #shell:
-  #  program: /bin/bash
-  #  args:
-  #    - --login
+  shell:
+    program: /bin/zsh
+    args:
+      - --login
+      - -c tmux
   # Startup directory
   #
   # Directory the shell is started in. If this is unset, or `None`, the working
@@ -804,30 +805,30 @@ font:
   # Print all received window events.
   #print_events: false
 colors:
-  # Default colors
+  name: Atelierdune (light)
+  author: Chris Kempson
   primary:
-    background: '#300a24'
-    foreground: '#eeeeec'
-
-  # Normal colors
+    background: "#fefbec"
+    foreground: "#6e6b5e"
+  cursor:
+    text: "#fefbec"
+    cursor: "#6e6b5e"
   normal:
-    black: '#2e3436'
-    red: '#cc0000'
-    green: '#4e9a06'
-    yellow: '#c4a000'
-    blue: '#3465a4'
-    magenta: '#75507b'
-    cyan: '#06989a'
-    white: '#d3d7cf'
-
-  # Bright colors
+    black: "#20201d"
+    red: "#d73737"
+    green: "#60ac39"
+    yellow: "#cfb017"
+    blue: "#6684e1"
+    magenta: "#b854d4"
+    cyan: "#1fad83"
+    white: "#a6a28c"
   bright:
-    black: '#555753'
-    red: '#ef2929'
-    green: '#8ae234'
-    yellow: '#fce94f'
-    blue: '#729fcf'
-    magenta: '#ad7fa8'
-    cyan: '#34e2e2'
-    white: '#eeeeec'
-theme: Ubuntu
+    black: "#7d7a68"
+    red: "#d73737"
+    green: "#60ac39"
+    yellow: "#cfb017"
+    blue: "#6684e1"
+    magenta: "#b854d4"
+    cyan: "#1fad83"
+    white: "#fefbec"
+theme: Atelierdune.light

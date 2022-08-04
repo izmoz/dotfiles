@@ -13,9 +13,8 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
-# TERM variable
-#
+env:
+  TERM: xterm-256color
 # This value is used to set the `$TERM` environment variable for
 # each instance of Alacritty. If it is not present, alacritty will
 # check the local terminfo database and use `alacritty` if it is
@@ -104,10 +103,10 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     # family: CodeNewRoman NF
-    family: JetBrainsMono  NF
-    size: Bold
+    family: DejaVuSansMono Nerd Font
     # The `style` can be specified to pick a specific face.
-    style: null
+    style: Light
+    size: 11
     # Bold font face
     #bold:
     # Font family
@@ -379,10 +378,11 @@ font:
   #   - (macOS) /bin/bash --login
   #   - (Linux/BSD) user login shell
   #   - (Windows) powershell
-  #shell:
-  #  program: /bin/bash
-  #  args:
-  #    - --login
+  shell:
+    program: /bin/zsh
+    args:
+      - --login
+      - -c tmux
   # Startup directory
   #
   # Directory the shell is started in. If this is unset, or `None`, the working
@@ -804,53 +804,29 @@ font:
   #log_level: Warn
   # Print all received window events.
   #print_events: false
-# Colors (Gruvbox dark)
 colors:
   # Default colors
   primary:
-    background: '#2c2c2c'
-    foreground: '#d6d6d6'
-
-    dim_foreground: '#dbdbdb'
-    bright_foreground: '#d9d9d9'
-    dim_background: '#202020' # not sure
-    bright_background: '#3a3a3a' # not sure
-
-  # Cursor colors
-  cursor:
-    text: '#2c2c2c'
-    cursor: '#d9d9d9'
-
+    background: '#1B1D1E'
+    foreground: '#F8F8F2'
   # Normal colors
   normal:
-    black: '#1c1c1c'
-    red: '#bc5653'
-    green: '#909d63'
-    yellow: '#ebc17a'
-    blue: '#7eaac7'
-    magenta: '#aa6292'
-    cyan: '#86d3ce'
-    white: '#cacaca'
-
+    black: '#333333'
+    red: '#C4265E'
+    green: '#86B42B'
+    yellow: '#B3B42B'
+    blue: '#6A7EC8'
+    magenta: '#8C6BC8'
+    cyan: '#56ADBC'
+    white: '#E3E3DD'
   # Bright colors
   bright:
-    black: '#636363'
-    red: '#bc5653'
-    green: '#909d63'
-    yellow: '#ebc17a'
-    blue: '#7eaac7'
-    magenta: '#aa6292'
-    cyan: '#86d3ce'
-    white: '#f7f7f7'
-
-  # Dim colors
-  dim:
-    black: '#232323'
-    red: '#74423f'
-    green: '#5e6547'
-    yellow: '#8b7653'
-    blue: '#556b79'
-    magenta: '#6e4962'
-    cyan: '#5c8482'
-    white: '#828282'
-theme: Afterglow
+    black: '#666666'
+    red: '#F92672'
+    green: '#A6E22E'
+    yellow: '#E2E22E'
+    blue: '#819AFF'
+    magenta: '#AE81FF'
+    cyan: '#66D9EF'
+    white: '#F8F8F2'
+theme: Molokai

@@ -1,7 +1,7 @@
 local keymap = vim.api.nvim_set_keymap
 keymap('n', '<c-s>', ':w<CR>', {})
 keymap('i', '<c-s>', '<Esc>:w<CR>a', {})
-local opts = { noremap = true }
+local opts = { noremap = true, silent=true }
 keymap('n', '<c-j>', '<c-w>j', opts)
 keymap('i', '<C-c>', '<Esc>', opts)
 keymap('n', '<c-h>', '<c-w>h', opts)
@@ -19,6 +19,9 @@ keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(requir
 keymap("n", "<leader>dd", "<cmd>lua require'telescope.builtin'.diagnostics(require('telescope.themes').get_ivy({ layout_config = {height = 0.3},previewer = false })) <cr>", opts)
 -- keymap("n", "<leader>dd", "<cmd>Telescope diagnostics theme=dropdown<cr>", opts)
 keymap("n","<leader>cf",":!clang-format % -i<cr>",opts)
+keymap("n","<leader>mk",":make<cr>",opts)
 keymap('n','d[', ':lua vim.diagnostic.goto_next()<cr>',opts)
 keymap('n','[d', ':lua vim.diagnostic.goto_prev()<cr>',opts)
 keymap('n','K', ':lua vim.lsp.buf.hover()<cr>',opts)
+keymap('n','<leader>lb', ':set background=light<cr>',opts)
+keymap('n','<leader>db', ':set background=dark<cr>',opts)

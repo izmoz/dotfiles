@@ -13,9 +13,8 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
-# TERM variable
-#
+env:
+  TERM: xterm-256color
 # This value is used to set the `$TERM` environment variable for
 # each instance of Alacritty. If it is not present, alacritty will
 # check the local terminfo database and use `alacritty` if it is
@@ -61,7 +60,7 @@ decorations: full
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
 #opacity: 0.5
-window.opacity: 0.5
+# window.opacity: 1.0
 # Startup Mode (changes require restart)
 #
 # Values for `startup_mode`:
@@ -103,10 +102,11 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: FiraCode NF
-    size: 13
+    # family: CodeNewRoman NF
+    family: DejaVuSansMono Nerd Font
     # The `style` can be specified to pick a specific face.
-    style: Semibold
+    style: Light
+    size: 11
     # Bold font face
     #bold:
     # Font family
@@ -378,10 +378,11 @@ font:
   #   - (macOS) /bin/bash --login
   #   - (Linux/BSD) user login shell
   #   - (Windows) powershell
-  #shell:
-  #  program: /bin/bash
-  #  args:
-  #    - --login
+  shell:
+    program: /bin/zsh
+    args:
+      - --login
+      - -c tmux
   # Startup directory
   #
   # Directory the shell is started in. If this is unset, or `None`, the working
@@ -804,30 +805,30 @@ font:
   # Print all received window events.
   #print_events: false
 colors:
-  # Default colors
+  name: Atelierheath (light)
+  author: Chris Kempson
   primary:
-    background: '#101421'
-    foreground: '#fffbf6'
-
-  # Normal colors
+    background: "#f7f3f7"
+    foreground: "#695d69"
+  cursor:
+    text: "#f7f3f7"
+    cursor: "#695d69"
   normal:
-    black: '#2e2e2e'
-    red: '#eb4129'
-    green: '#abe047'
-    yellow: '#f6c744'
-    blue: '#47a0f3'
-    magenta: '#7b5cb0'
-    cyan: '#64dbed'
-    white: '#e5e9f0'
-
-  # Bright colors
+    black: "#1b181b"
+    red: "#ca402b"
+    green: "#379a37"
+    yellow: "#bb8a35"
+    blue: "#516aec"
+    magenta: "#7b59c0"
+    cyan: "#159393"
+    white: "#ab9bab"
   bright:
-    black: '#565656'
-    red: '#ec5357'
-    green: '#c0e17d'
-    yellow: '#f9da6a'
-    blue: '#49a4f8'
-    magenta: '#a47de9'
-    cyan: '#99faf2'
-    white: '#ffffff'
-theme: iTerm-Default
+    black: "#776977"
+    red: "#ca402b"
+    green: "#379a37"
+    yellow: "#bb8a35"
+    blue: "#516aec"
+    magenta: "#7b59c0"
+    cyan: "#159393"
+    white: "#f7f3f7"
+theme: Atelierheath.light

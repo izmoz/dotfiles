@@ -13,8 +13,8 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
-# TERM variable
+env:
+ TERM: xterm-256color
 #
 # This value is used to set the `$TERM` environment variable for
 # each instance of Alacritty. If it is not present, alacritty will
@@ -61,7 +61,7 @@ decorations: full
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
 #opacity: 0.5
-window.opacity: 0.5
+# window.opacity: 1.0
 # Startup Mode (changes require restart)
 #
 # Values for `startup_mode`:
@@ -71,7 +71,7 @@ window.opacity: 0.5
 #
 # Values for `startup_mode` (macOS only):
 #   - SimpleFullscreen
-startup_mode: Windowed
+#startup_mode: Windowed
 # Window title
 #title: Alacritty
 # Allow terminal applications to change Alacritty's window title.
@@ -103,10 +103,11 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Monaco
-    size: 11
+    # family: CodeNewRoman NF
+    family: DejaVuSansMono Nerd Font
     # The `style` can be specified to pick a specific face.
-    #style: Bold
+    style: Light
+    size: 11
     # Bold font face
     #bold:
     # Font family
@@ -378,10 +379,11 @@ font:
   #   - (macOS) /bin/bash --login
   #   - (Linux/BSD) user login shell
   #   - (Windows) powershell
-  #shell:
-  #  program: /bin/bash
-  #  args:
-  #    - --login
+  shell:
+    program: /bin/zsh
+    args:
+      - --login
+      - -c tmux
   # Startup directory
   #
   # Directory the shell is started in. If this is unset, or `None`, the working
@@ -803,32 +805,3 @@ font:
   #log_level: Warn
   # Print all received window events.
   #print_events: false
-colors:
-  name: astromouse
-  author: ""
-  primary:
-    background: "#000000"
-    foreground: "#ffffff"
-  cursor:
-    text: "#000000"
-    cursor: "#ffffff"
-  normal:
-    black: "#1c1c1c"
-    red: "#d770af"
-    green: "#9acc79"
-    yellow: "#d0d26b"
-    blue: "#77b6c5"
-    magenta: "#a488d9"
-    cyan: "#7fcab3"
-    white: "#8d8d8d"
-  bright:
-    black: "#3d3a3a"
-    red: "#d28abf"
-    green: "#8fb676"
-    yellow: "#c8bc45"
-    blue: "#8fa7b9"
-    magenta: "#bd89de"
-    cyan: "#6ec2a8"
-    white: "#dad3d3"
-theme: Astromouse
-

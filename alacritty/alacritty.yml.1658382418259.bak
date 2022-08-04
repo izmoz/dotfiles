@@ -61,7 +61,7 @@ decorations: full
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
 #opacity: 0.5
-window.opacity: 0.5
+# window.opacity: 1.0
 # Startup Mode (changes require restart)
 #
 # Values for `startup_mode`:
@@ -103,10 +103,11 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: FiraCode NF
-    size: 13
+    # family: CodeNewRoman NF
+    family: SourceCodePro
     # The `style` can be specified to pick a specific face.
-    style: Light
+    style: Medium
+    size: 9
     # Bold font face
     #bold:
     # Font family
@@ -378,10 +379,11 @@ font:
   #   - (macOS) /bin/bash --login
   #   - (Linux/BSD) user login shell
   #   - (Windows) powershell
-  #shell:
-  #  program: /bin/bash
-  #  args:
-  #    - --login
+  shell:
+    program: /bin/zsh
+    args:
+      - --login
+      - -c tmux
   # Startup directory
   #
   # Directory the shell is started in. If this is unset, or `None`, the working
@@ -803,33 +805,32 @@ font:
   #log_level: Warn
   # Print all received window events.
   #print_events: false
+# Colors (Gruvbox dark)
 colors:
-  # Default colors
+  name: 3024 (dark)
+  author: Chris Kempson
   primary:
-    # hard contrast: background = '#1d2021'
-    background: '#282828'
-    # soft contrast: background = '#32302f'
-    foreground: '#ebdbb2'
-
-  # Normal colors
+    background: "#090300"
+    foreground: "#a5a2a2"
+  cursor:
+    text: "#090300"
+    cursor: "#a5a2a2"
   normal:
-    black: '#282828'
-    red: '#cc241d'
-    green: '#98971a'
-    yellow: '#d79921'
-    blue: '#458588'
-    magenta: '#b16286'
-    cyan: '#689d6a'
-    white: '#a89984'
-
-  # Bright colors
+    black: "#090300"
+    red: "#db2d20"
+    green: "#01a252"
+    yellow: "#fded02"
+    blue: "#01a0e4"
+    magenta: "#a16a94"
+    cyan: "#b5e4f4"
+    white: "#a5a2a2"
   bright:
-    black: '#928374'
-    red: '#fb4934'
-    green: '#b8bb26'
-    yellow: '#fabd2f'
-    blue: '#83a598'
-    magenta: '#d3869b'
-    cyan: '#8ec07c'
-    white: '#ebdbb2'
-theme: Gruvbox-Dark
+    black: "#5c5855"
+    red: "#db2d20"
+    green: "#01a252"
+    yellow: "#fded02"
+    blue: "#01a0e4"
+    magenta: "#a16a94"
+    cyan: "#b5e4f4"
+    white: "#f7f7f7"
+theme: 3024.dark
